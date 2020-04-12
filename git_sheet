@@ -58,3 +58,4 @@ Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/******10/Python_own.git
  * [new branch]      master -> master
 
+## after each changes in existing file if you want it to reflect it to github then 1. commit and 2. git push origin master 
