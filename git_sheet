@@ -1,0 +1,75 @@
+git credentials:**see password page
+
+remove github repository from gui : 
+
+1. login to github 
+2. select repository
+3. go to settings
+4. see Danger Zone > delete the repository > type the path and repository name to remove it
+
+https://linuxize.com/post/how-to-install-git-on-ubuntu-18-04/v
+
+https://www.geeksforgeeks.org/how-to-install-configure-and-use-git-on-ubuntu/  --> follow this
+
+home directory of GIT : /home/indra/GIT
+
+sudo apt update
+
+sudo apt install git
+
+git --version
+
+sudo apt install make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
+
+-----------------------------------------------------------
+install GIT :: ----------------------------------------
+
+sudo apt update
+sudo apt install git
+git --version
+
+Go to working directory and initialize GIT ::-------------------
+
+cd $HOME/GIT/
+git init ## will create one /.git directory in working directory 
+
+configure with github ( GUI ) ----------------------------------
+
+git config --global user.name "<NAME>"
+git config --global user.email "<xyz@example.com>"
+git config --global --list
+
+create one repository in GITHUB and then copy the url and make a clone at local machine ---------------
+
+git clone https://github.com/indraa10/Python_own.git
+
+Go to the particular directory to add and commit file -----------------------------------
+
+cd Python_own/
+
+
+git add git_test.py ## add untrack file to GIT i.e staging mode
+git status
+git commit -m "welcome git user" ##commit the file to git and commit happen at local machine level
+git status
+git branch --unset-upstream  ##optional , if encountered error 
+
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+
+
+git status
+git push origin master ## push the file to github , origin --> github , master --> branch
+
+$:~/GIT/Python_own$ git push origin master
+Username for 'https://github.com': ****10
+Password for 'https://*****10@github.com': 
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 247 bytes | 247.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/******10/Python_own.git
+ * [new branch]      master -> master
+
