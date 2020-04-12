@@ -7,21 +7,6 @@ remove github repository from gui :
 3. go to settings
 4. see Danger Zone > delete the repository > type the path and repository name to remove it
 
-https://linuxize.com/post/how-to-install-git-on-ubuntu-18-04/v
-
-https://www.geeksforgeeks.org/how-to-install-configure-and-use-git-on-ubuntu/  --> follow this
-
-home directory of GIT : /home/indra/GIT
-
-sudo apt update
-
-sudo apt install git
-
-git --version
-
-sudo apt install make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
-
------------------------------------------------------------
 install GIT :: ----------------------------------------
 
 sudo apt update
