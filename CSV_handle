@@ -1,0 +1,32 @@
+#!/usr/bin/python
+import csv
+
+prodlist=[]
+drlist=[]
+nonprodlist=[]
+
+with open("all_vm.csv",'r') as csvfile:
+    readCSV=csv.reader( csvfile , delimiter=',' )
+    for row in readCSV:
+         print(row[1])
+         if row[1] == 'p' :
+              prodlist.append(row[0])
+         elif row[1] == 'b' :
+              drlist.append(row[0])
+         else :
+              nonprodlist.append(row[0])
+    print(prodlist)
+    print(drlist)
+    print(nonprodlist)
+with open("host_prod",'w') as hp:
+    for vm in prodlist :
+            hp.write(vm)
+            hp.write("\n")
+with open("host_dr",'w') as hd:
+    for vm in drlist :
+            hd.write(vm)
+            hd.write("\n")
+with open("host_nonprod",'w') as hnp:
+    for vm in nonprodlist :
+            hnp.write(vm)
+            hnp.write("\n")
