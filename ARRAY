@@ -8,7 +8,7 @@
 # Input number of columns: 4  
 # Output
 # [[0, 0, 0, 0], [0, 1, 2, 3], [0, 2, 4, 6]] 
-
+##sol 1
 def matrices( rowcount , columncount):
     mat=[]
     for i in range(rowcount):
@@ -20,3 +20,11 @@ def matrices( rowcount , columncount):
 
 a=matrices(3,4)
 print(a)
+##sol 2
+row_num = int(input("Input number of rows: "))
+col_num = int(input("Input number of columns: "))
+multi_list = [[0 for col in range(col_num)] for row in range(row_num)]
+for row in range(row_num):
+    for col in range(col_num):
+        multi_list[row][col]= row*col
+print(multi_list)
