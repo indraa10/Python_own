@@ -19,4 +19,16 @@ print(final)
 #enter a alpha numeric string :AB56G4S1
 #ABGS5641
 ########################################
+#list to string for both int and non-int
+list1=[1,2,3]
+list2=['a','b','c']
+
+str1=''.join(str(e) for e in list1)
+str2=''.join(list2)
+print(str1,str2,sep=':')
+#string to list
+str1="abc123uv"
+l1=list(str1.split(' '))
+print(l1)
+#string to list normal and character wise
 
