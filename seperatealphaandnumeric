@@ -31,4 +31,14 @@ str1="abc123uv"
 l1=list(str1.split(' '))
 print(l1)
 #string to list normal and character wise
-
+#string to list
+str1=input("enter a string: ")
+list1=list(str1.split())
+letter=[]
+word=[]
+for i in list1:
+    for j in i:
+        letter.append(j)
+    word.append(i)
+print("letter wise list: ",letter)
+print("word wise list: ",word)
