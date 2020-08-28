@@ -1,0 +1,22 @@
+#declare two list one for alpha and another for numeric
+alpha = []
+numeric = []
+#enter the alphanumeric string
+ip = input("enter a alpha numeric string :")
+#start the iteration
+for i in ip:
+    if i.isalpha() == True :
+        alpha.append(i)
+    else :
+        numeric.append(str(i))
+#list concatination
+total=alpha + numeric
+#list to string conversion
+final = ''.join(total)
+print(final)
+
+########################################
+#enter a alpha numeric string :AB56G4S1
+#ABGS5641
+########################################
+
