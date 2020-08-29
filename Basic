@@ -1,0 +1,32 @@
+
+# Write a Python program that accepts an integer (n) and computes the value of n+nn+nnn. Go to the editor
+# Sample value of n is 5 
+# Expected Result : 615
+#sol1
+a = int(input("Input an integer : "))
+n1 = int( "%s" % a )
+n2 = int( "%s%s" % (a,a) )
+n3 = int( "%s%s%s" % (a,a,a) )
+print (n1+n2+n3)
+#sol2
+a = int(input("Input an integer : "))
+n1 = int( "%s" % a )
+n2 = int( "%s%s" % (a,a) )
+n3 = int( "%s%s%s" % (a,a,a) )
+print (n1+n2+n3)
+====================================================================================================================
+
+# Create a program that asks the user to enter their name and their age.
+# Print out a message addressed to them that tells them the year that they will turn 100 years old.
+from datetime import datetime
+yr=datetime.now()
+curr_yr=int(yr.year)
+
+def age_calc():
+    n=input("enter your name:")
+    a=int(input("enter your age:"))
+    result=(curr_yr-a+100)
+    print("in the year %i , %s will be 100 years old" %(result,n))
+
+age_calc()
+====================================================================================================================
