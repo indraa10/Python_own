@@ -28,3 +28,83 @@ for row in range(row_num):
     for col in range(col_num):
         multi_list[row][col]= row*col
 print(multi_list)
+###############################################################################################################################################
+"""
+Given an array of integers, return indices of the two numbers
+such that they add up to a specific target.
+You may assume that each input would have exactly one solution,
+and you may not use the same element twice.
+Example:
+    Given nums = [2, 7, 11, 15], target = 26,
+    Because nums[0] + nums[1] = 11 + 15 = 26,
+    return [2, 3].
+"""
+
+# Solution 1
+# Try all 
+
+input_array = [2, 7, 11, 15]
+target = 13
+result = []
+
+'''
+for i, num in enumerate(input_array):
+    for j in range(i+1, len(input_array)):
+        print(i,j)
+'''
+
+for i in range(len(input_array)):
+    for j in range(len(input_array)):
+        if input_array[i]+input_array[j] == target:
+            result.append(i)
+print(result)
+##################################################################################################################################################
+# Challenge
+# 
+# Given a string, find the length of the longest substring
+# without repeating characters.
+
+# Examples:
+
+# Given "abcabcbb", the answer is "abc", which the length is 3.
+# Given "bbbbb", the answer is "b", with the length of 1.
+# Given "pwwkew", the answer is "wke", with the length of 3.
+# ---------------------------------------------------------------
+entry=input("provide a string: ")
+sub=[]
+for i in entry:
+    if i not in sub :
+        sub.append(i)
+str1=''.join(sub)
+print("new sub string is %s and length of that substring is %i" %(str1,len(str1)))
+##################################################################################################################################################
+# Consider an array of non-negative integers.
+# A second array is formed by shuffling the elements of the first array and deleting a random element. 
+# Given these two arrays, find which element is missing in the second array.
+# Here is an example input, the first array is shuffled and the number 5 is removed to construct the second array.
+# Input:
+# finder([1,2,3,4,5,6,7],[3,7,2,1,4,6])
+# Output:
+# 5 is the missing number
+arr1=[1,2,3,4,5,6,7,9,11]
+arr2=[3,7,2,1,4,6]
+missing=[]
+for i in arr1:
+    if i not in arr2:
+        missing.append(i)
+print(missing)
+miss_str=','.join(str(e) for e in missing)
+print("%s is the missing number" %(miss_str))
+################################################################################################################################################
+# Rotate an array of n elements to the right by k steps.
+# For example, with n = 7 and k = 3,
+# the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].
+# Note:
+# Try to come up as many solutions as you can,
+# there are at least 3 different ways to solve this problem.
+arr1=[1,2,3,4,5,6,7]
+k=3
+for i in range(k):
+    arr1.insert(len(arr1)+1,arr1[0])
+    arr1.remove(arr1[0])
+print(arr1)
