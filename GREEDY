@@ -1,4 +1,5 @@
 '''
+####ref : https://www.hackerrank.com/challenges/minimum-absolute-difference-in-an-array/problem
 With n=3 integers in our array, we have three possible pairs:(3,-7),(3,0),(-7,0) and 
 . The absolute values of the differences between these pairs are as follows:
 |3- -7|==>10
@@ -16,25 +17,15 @@ import random
 import re
 import sys
 
-# Complete the minimumAbsoluteDifference function below.
 def minimumAbsoluteDifference(arr):
-    value=[] 
-    #declear an empty array to store the absolute difference between each pair of element
-    for i in range(len(arr)-1): 
-    # travers the element from arr[0] to arr[n-1]
-        for j in range(1,len(arr)): 
-        # travers the element from arr[1] to arr[n] , as you dont want to substract one element to same element
-            if i!=j: 
-            #condition to avoid same element substraction
-                value.append(abs(arr[i]-arr[j])) 
-                # considering the exact value and store all the possible difference to the array
-                #print(value,i,j,sep=':') 
-                # debug purpose 
-    value1=sorted(value) 
-    # sorting the array in increasing order 
-    return value1[0] 
-    # obviously 1st element will be least one
-
+    diff=[] # empty list to contain the absolute difference between adjacent element after sort
+    sorted_arr=sorted(arr) # sort the raw list 
+    for i in range(len(sorted_arr)-1):
+        diff.append(abs(sorted_arr[i]-sorted_arr[i+1])) # absolute difference between adjacent elements
+    diff_sorted=sorted(diff) # sorted the difference 
+    return diff_sorted[0] # obviously 1st element would be the minimum one
+    
+  
 arr1=[]
 n=int(input("Enter number of element: "))
 for i in range(n):
