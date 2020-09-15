@@ -1,0 +1,26 @@
+stepcount={}
+stepcount[1]=1
+stepcount[2]=2
+stepcount[3]=4
+
+def stepPerms(n):
+    if n==0:
+        return -1
+    if n in stepcount.keys():
+        return stepcount[n]
+    stepcount[n]=stepPerms(n-1)+stepPerms(n-2)+stepPerms(n-3)
+    return stepcount[n]
+    
+
+
+
+sample=int(input("Enter number of test cases: "))
+steps_series=[]
+for _ in range(sample):
+    steps=(int(input("Enter the steps count: ")))
+    steps_series.append(steps)
+
+for i in steps_series:
+    res = stepPerms(i)
+    print(res)
+
