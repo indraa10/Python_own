@@ -1,0 +1,42 @@
+#ref : https://www.hackerrank.com/challenges/max-array-sum/problem
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the maxSubsetSum function below.
+def maxSubsetSum(arr):
+##excl --> value of sum except arr[i] whereas incl --> value of maxsum include arr[i]
+## maximum --> at any point corresponding max value between incl and excl
+##newarr --> store the maximum value
+##sortedarr --> sorted the maximum in reverse order 
+##@@@ obviously the first element will be max
+#@@@@@@@@@@ in dynamic programming , we need to do some calculation and store the value to some intermediate list which will reduce the recursion computation @@@@@@@@@@@@@#
+    excl=0
+    incl=0
+    maximum=0
+    newarr=[]
+    for i in arr:
+    ## new excl value is old incl value
+    ## new incl value is max value between old excl + arr[i] and old incl
+        excl_new=incl
+        incl_new=max(excl+i,incl)
+        excl=excl_new
+        incl=incl_new
+        maximum=max(incl,excl)
+        newarr.append(maximum)
+        sortedarr=sorted(newarr,reverse=True)
+    return sortedarr[0]
+
+
+n=int(input("enter the length of array: "))
+array1=[]
+for _ in range(n):
+    i = int(input("enter the element: "))
+    array1.append(i)
+
+a=maxSubsetSum(array1)
+print("max non adjacent element sum: ",a)
